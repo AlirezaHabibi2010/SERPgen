@@ -20,7 +20,7 @@ def key_to_text(
         key_list,
         max_length: int = 512,          #512    ; 1024 not working
         num_return_sequences: int = 5,    #1  ; 5 max
-        num_beams: int = 5,        #2
+        num_beams: int = 4,        #2
         top_k: int = 10,            #50
         top_p: float = 2.5,            #0.95
         do_sample: bool = True,             #True
@@ -80,7 +80,7 @@ def gen_SERP_mass(params):
     #if params["purpose_type"] == "selling goods":    #uncomment and change indentation later to enable differed modes (goods, services, etc)
     mass_serp_df = params["input_df"].copy()
     for index, row in mass_serp_df.iterrows():
-        product_name = str(row["Product/Service Name"])
+        product_name = row["Product/Service Name"]
         product_attributes = row["Attributes"].split(", ")
         serp_api_output = key_to_text(product_attributes)
         serp_output = f"{product_name} by {company_name} - {serp_api_output}"
