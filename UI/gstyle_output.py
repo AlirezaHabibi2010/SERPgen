@@ -45,3 +45,4 @@ def gen_SERP_preview(params, output_single):
         <script src="index.js"></script>
         </body>
         </html>"""
+    return html_output
