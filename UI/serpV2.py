@@ -18,7 +18,7 @@ company_name = st.text_input('My Company is called:', key='com_nam')
 purpose_type = st.radio('Purpose', ['selling goods', 'promoting services'])
 input_mod = st.radio('Single query or mass query via csv-file?', ['Single', 'CSV-Upload'])
 if input_mod == 'Single':
-    prod, cat, keys = st.columns(3)
+    prod, cat, keys = st.columns(3) #columns
     with prod:
         product_name = st.text_input('Provide your product name:', key='prod_nam')
     with cat:
